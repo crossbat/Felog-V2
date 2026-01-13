@@ -1,9 +1,11 @@
-import MainPage from "./pages/mainPage/mainPage";
+import RouteWithLayout from "./routes/routesWithLayout";
+import RouteWithoutLayout from "./routes/routesWithoutLayout";
 
 export default function App() {
   return (
     <>
-      <MainPage />
+      <RouteWithLayout />
+      <RouteWithoutLayout />
     </>
   );
 }

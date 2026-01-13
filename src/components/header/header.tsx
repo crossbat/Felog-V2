@@ -1,3 +1,6 @@
+import { NavLink } from "react-router";
+import { MediumFont } from "../../styles/commomTextStyles";
+
 const Header = () => {
   const logoSrc = "../../../assets/logo.png";
   return (
@@ -9,10 +12,10 @@ const Header = () => {
         <div className="flex items-center justify-center w-150 bg-[#f5f5f5] px-[50px] rounded-[15px]">
           <ul className="w-full flex list-none justify-between text-2xl">
             <li>
-              <a href="#">About</a>
+              <a href="#">Felog</a>
             </li>
             <li>
-              <a href="#">Introduce</a>
+              <a href="#">소개</a>
             </li>
             <li>
               <a href="#">Contact</a>
@@ -20,7 +23,9 @@ const Header = () => {
           </ul>
         </div>
         <div className="flex items-center text-2xl">
-          <a>Login</a>
+          <NavLink to="/sign">
+            <MediumFont>로그인</MediumFont>
+          </NavLink>
         </div>
       </div>
     </>

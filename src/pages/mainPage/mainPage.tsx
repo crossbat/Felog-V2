@@ -1,4 +1,5 @@
-import MainLayout from "../../layouts/mainLayout/layout";
+import { MediumFont, TitleFont } from "../../styles/commomTextStyles";
+import { BlueATag } from "./mainPageStyles";
 
 const title = "Lorem Ipsum";
 const content =
@@ -6,14 +7,12 @@ const content =
 
 const MainPage = () => {
   return (
-    <MainLayout>
+    <>
       <div className="py-[100px] px-[60px] h-full flex flex-row justify-between gap-36">
         <div className=" flex flex-1 flex-col justify-center grow-1 gap-10">
-          <p className="text-4xl font-bold">{title}</p>
-          <p className="text-2xl">{content}</p>
-          <a className="text-2xl text-[#327AFF]" href="#">
-            More about Felog
-          </a>
+          <TitleFont>{title}</TitleFont>
+          <MediumFont>{content}</MediumFont>
+          <BlueATag href="#">More about Felog</BlueATag>
         </div>
         <div className="flex flex-1 grow-1">
           <img
@@ -22,7 +21,7 @@ const MainPage = () => {
           />
         </div>
       </div>
-    </MainLayout>
+    </>
   );
 };
 
