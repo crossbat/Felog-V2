@@ -1,7 +1,7 @@
 import tw from "tailwind-styled-components";
-import { FlexGrowDiv, FlexRowScnDiv } from "../../styles/commonDivStyles";
+import { FlexGrowRowDiv, FlexRowScnDiv } from "../../styles/commonDivStyles";
 
-export const FlexGrowCenter = tw(FlexGrowDiv)`
+export const FlexGrowCenter = tw(FlexGrowRowDiv)`
   jusitify-center
   items-center
 `;

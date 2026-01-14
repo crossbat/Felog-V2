@@ -30,8 +30,14 @@ export const FlexColScnDiv = tw(FullScreenDiv)`
   flex-col
 `;
 
-export const FlexGrowDiv = tw(FullSizeDiv)`
+export const FlexGrowRowDiv = tw(FullSizeDiv)`
   flex
   flex-row
+  grow-1
+`;
+
+export const FlexGrowColDiv = tw(FullSizeDiv)`
+  flex
+  flex-col
   grow-1
 `;

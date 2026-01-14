@@ -1,13 +1,16 @@
+import { useNavigate } from "react-router";
 import { SmallFont } from "../../../styles/commomTextStyles";
 import { SignInputSize } from "../../../styles/commonInputStyles";
 import { SignButton } from "../signPageStyles";
 
 const SignUpBox = () => {
+  const nav = useNavigate();
   return (
     <>
       <img
         src="../../../assets/logo.png"
         className="h-[100px] object-contain"
+        onClick={() => nav("/")}
       />
       <SignInputSize placeholder="아이디" />
       <SignInputSize placeholder="이메일" />

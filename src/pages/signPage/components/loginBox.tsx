@@ -1,13 +1,16 @@
+import { useNavigate } from "react-router";
 import { SmallFont } from "../../../styles/commomTextStyles";
 import { SignInputSize } from "../../../styles/commonInputStyles";
 import { SignButton, SocialLoginDiv } from "../signPageStyles";
 
 const LoginBox = () => {
+  const nav = useNavigate();
   return (
     <>
       <img
         src="../../../assets/logo.png"
         className="h-[100px] object-contain"
+        onClick={() => nav("/")}
       />
       <SignInputSize placeholder="아이디" />
       <SignInputSize placeholder="비밀번호" type="password" />
