@@ -1,0 +1,11 @@
+
+        <FlexColFullDiv className="gap-[30px]">
+          <FlexRowFullDiv className="gap-[30px]">
+            <FlexGrowRowDiv className="bg-amber-100"></FlexGrowRowDiv>
+            <FlexGrowRowDiv className="bg-amber-100"></FlexGrowRowDiv>
+          </FlexRowFullDiv>
+          <FlexRowFullDiv className="gap-[30px]">
+            <FlexGrowRowDiv className="bg-amber-100"></FlexGrowRowDiv>
+            <FlexGrowRowDiv className="bg-amber-100"></FlexGrowRowDiv>
+          </FlexRowFullDiv>
+        </FlexColFullDiv>

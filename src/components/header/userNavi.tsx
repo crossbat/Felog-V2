@@ -1,8 +1,10 @@
+import { NavLink } from "react-router";
+
 const UserNav = () => {
   return (
     <>
       <li>
-        <a href="#">대시보드</a>
+        <NavLink to="/user">대시보드</NavLink>
       </li>
       <li>
         <a href="#">달력</a>

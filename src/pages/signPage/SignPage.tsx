@@ -14,12 +14,12 @@ const SignPage = () => {
           </TitleFont>
         </div>
       </div>
-      <FlexGrowCenter>
+      <FlexGrowCenter $grow="1">
         <SignFlex>
           <LoginBox />
         </SignFlex>
       </FlexGrowCenter>
-      <FlexGrowCenter>
+      <FlexGrowCenter $grow="1">
         <SignFlex>
           <SignUpBox />
         </SignFlex>

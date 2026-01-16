@@ -13,12 +13,12 @@ const content =
 const LandingPage = () => {
   return (
     <LandingMainDiv>
-      <LandingGrowDiv>
+      <LandingGrowDiv $grow="1">
         <TitleFont>{title}</TitleFont>
         <MediumFont>{content}</MediumFont>
         <BlueATag href="#">More about Felog</BlueATag>
       </LandingGrowDiv>
-      <LandingGrowDiv>
+      <LandingGrowDiv $grow="1">
         <BannerImage src="../../../assets/MainPageImage.png" />
       </LandingGrowDiv>
     </LandingMainDiv>

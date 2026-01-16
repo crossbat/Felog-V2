@@ -1,5 +1,6 @@
 import tw from "tailwind-styled-components";
 
+//div
 export const FullScreenDiv = tw.div`
   w-screen
   h-screen
@@ -9,6 +10,8 @@ export const FullSizeDiv = tw.div`
   w-full
   h-full
 `;
+
+//flex
 
 export const FlexRowFullDiv = tw(FullSizeDiv)`
   flex
@@ -30,14 +33,30 @@ export const FlexColScnDiv = tw(FullScreenDiv)`
   flex-col
 `;
 
-export const FlexGrowRowDiv = tw(FullSizeDiv)`
+interface FlexGrowProps {
+  $grow?: string;
+}
+
+export const FlexGrowRowDiv = tw(FullSizeDiv)<FlexGrowProps>`
   flex
   flex-row
-  grow-1
+  ${(p) => `grow-${p.$grow}`}
 `;
 
 export const FlexGrowColDiv = tw(FullSizeDiv)`
   flex
   flex-col
-  grow-1
+  ${(p) => `grow-${p.$grow}`}
+`;
+
+//grid
+
+interface gridTemplateProps {
+  $width: string;
+  $height: string;
+}
+
+export const GridFullTemplate = tw(FullSizeDiv)<gridTemplateProps>`
+  ${(p) => `grid-cols-${p.$width} grid-rows-${p.$height}`}
+  grid
 `;
