@@ -1,11 +1,18 @@
-.react-calendar {
-  width: 100%;
+.react-calendar, .react-calendar *, .react-calendar *:before, .react-calendar *:after {
+  width:100%;
   height: 100%;
+}
+
+.react-calendar {
+  display: flex;
+  flex-direction: column;
   background: transparent;
+  width:1024px;
   border: none;
   font-family: "Arial", "Helvetica", sans-serif;
   line-height: 1.125em;
   font-size: 1.5em;
+  align-self:center;
 }
 
 .react-calendar--doubleView {
@@ -50,6 +57,7 @@
 
 .react-calendar__navigation button {
   min-width: 44px;
+  width: 100px;
   height: 100%;
   background: none;
 }
@@ -104,7 +112,6 @@
 .react-calendar__tile {
   max-width: 100%;
   padding: 10px 6.6667px;
-  background: red;
   text-align: center;
   font: inherit;
   font-size: 0.833em;
@@ -166,4 +173,9 @@
   display: grid !important;
   grid-template-rows: repeat(5, auto);
   grid-template-columns: repeat(7, auto);
+  gap:15px;
+}
+
+.react-calendar__month-view__days > * {
+  border-radius:10px;
 }

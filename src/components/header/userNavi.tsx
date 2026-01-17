@@ -4,10 +4,10 @@ const UserNav = () => {
   return (
     <>
       <li>
-        <NavLink to="/user">대시보드</NavLink>
+        <NavLink to="/user/cal">달력</NavLink>
       </li>
       <li>
-        <a href="#">달력</a>
+        <NavLink to="/user/board">대시보드</NavLink>
       </li>
       <li>
         <a href="#">미정</a>
