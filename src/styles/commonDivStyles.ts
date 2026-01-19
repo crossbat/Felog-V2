@@ -13,6 +13,15 @@ export const FullSizeDiv = tw.div`
 
 //flex
 
+export const FlexRow = tw.div`
+  flex
+`;
+
+export const FlexCol = tw.div`
+  flex
+  flex-col
+`;
+
 export const FlexRowFullDiv = tw(FullSizeDiv)`
   flex
   flex-row

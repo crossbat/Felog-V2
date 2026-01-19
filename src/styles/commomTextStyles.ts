@@ -20,3 +20,8 @@ export const TitleFont = tw.p`
   text-[36px]
   font-bold
 `;
+
+export const HeroFont = tw.p`
+  text-[42px]
+  font-bold
+`;

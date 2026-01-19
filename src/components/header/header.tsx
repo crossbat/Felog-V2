@@ -1,34 +1,37 @@
-import { NavLink } from "react-router";
-import { MediumFont } from "../../styles/commomTextStyles";
-import DefaultNav from "./defaultNav";
 import { useState } from "react";
 import UserNav from "./userNavi";
+import {
+  HeaderInnerDiv,
+  HeaderMain,
+  LogoImage,
+  MenuImage,
+} from "./headerStyles";
+import { useHeaderDropdownStatusStore } from "../../stores/headerStores";
 
 const Header = () => {
+  const { isOpened, setStatusChange } = useHeaderDropdownStatusStore();
   const [userSwitch, setUserSwitch] = useState(false);
   const logoSrc = "../../../assets/logo.png";
   return (
-    <>
-      <div className="w-full h-[60px] flex justify-between mt-[30px]">
+    <HeaderMain>
+      <HeaderInnerDiv>
         <a href="#" onClick={() => setUserSwitch(!userSwitch)}>
-          <img className="h-full" src={logoSrc} alt="logo" />
+          <LogoImage src={logoSrc} alt="logo" $opened={isOpened} />
         </a>
-        <div className="flex items-center justify-center w-150 bg-[#f5f5f5] px-[50px] rounded-[15px]">
-          <ul className="w-full flex list-none justify-between text-2xl">
-            {userSwitch ? <UserNav /> : <DefaultNav />}
-          </ul>
-        </div>
+        {userSwitch ? <UserNav /> : <></>}
         {userSwitch ? (
-          <div className="rounded-full h-full w-[60px] bg-amber-100" />
+          <div className="rounded-full h-[50px] w-[50px] bg-amber-100" />
         ) : (
-          <div className="flex items-center text-2xl">
-            <NavLink to="/sign">
-              <MediumFont>로그인</MediumFont>
-            </NavLink>
+          <div className="flex items-center">
+            <MenuImage
+              src="../../../assets/menu.png"
+              $opened={isOpened}
+              onClick={() => setStatusChange()}
+            />
           </div>
         )}
-      </div>
-    </>
+      </HeaderInnerDiv>
+    </HeaderMain>
   );
 };
 
