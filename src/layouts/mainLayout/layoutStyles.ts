@@ -6,8 +6,8 @@ interface IHeaderMenuStatus {
 }
 
 export const HeaderMenuDiv = tw(FlexCol)<IHeaderMenuStatus>`
-  ${(p) => (p.$opened ? "w-[var(--sidebar-open-width)] h-1/2" : "w-[var(--sidebar-close-width)] h-0")}
-  bg-black
+  ${(p) => (p.$opened ? "w-[var(--sidebar-open-width)] h-2/3" : "w-[var(--sidebar-close-width)] h-0")}
+  bg-[#0F0E0E]
   absolute
   z-999
   top-0
@@ -16,4 +16,9 @@ export const HeaderMenuDiv = tw(FlexCol)<IHeaderMenuStatus>`
   rounded-b-3xl
   ease-in-out
   duration-500
+  overflow-hidden
+`;
+
+export const EmptySpace = tw.div`
+  h-[120px]
 `;

@@ -5,4 +5,5 @@
   --sidebar-padding: max(1rem, calc((100% - 1152px) / 2));
   --sidebar-open-width: min(100vw, 1400px);
   --sidebar-close-width: min(100vw, 1152px);
+  --signpage-padding: max(1rem, calc((100vw - 500px) / 2));
 }

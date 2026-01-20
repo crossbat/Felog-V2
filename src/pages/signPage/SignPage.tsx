@@ -1,30 +1,29 @@
-import { TitleFont } from "../../styles/commomTextStyles";
-import LoginBox from "./components/loginBox";
-import SignUpBox from "./components/signUpBox";
-import { FlexGrowCenter, MainFlex, SignFlex } from "./signPageStyles";
+import { ExtraSmallFont } from "../../styles/commomTextStyles";
 
 const SignPage = () => {
   return (
-    <MainFlex>
-      <div className="absolute w-[50%] h-full z-10 top-0 start-0 p-[50px]">
-        <div className="bg-black w-full h-full rounded-4xl p-[30px] flex bg-[url(../../../assets/signBannerImage.png)] bg-center bg-cover">
-          <TitleFont className="text-white w-[60%]">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
-          </TitleFont>
+    <div className="w-screen h-screen flex flex-col gap-10 px-[var(--signpage-padding)] justify-center items-center">
+      <div className="w-20 h-20 rounded-full bg-black flex justify-center items-center overflow-hidden shadow-2xl">
+        <img
+          src="../../../assets/signLogo.png"
+          className="w-full h-full object-fit invert"
+        />
+      </div>
+      <div className="flex flex-col w-full min-h-[400px] p-16 rounded-3xl shadow-2xl justify-center items-center">
+        <div className="w-full h-fit flex flex-col gap-5 justify-center items-center">
+          <input placeholder="아이디" className="w-full text-md p-2" />
+          <input
+            placeholder="비밀번호"
+            type="password"
+            className="w-full text-md p-2"
+          />
+        </div>
+        <div className="flex gap-2 w-full">
+          <input type="checkbox" />
+          <ExtraSmallFont>아이디 기억하기</ExtraSmallFont>
         </div>
       </div>
-      <FlexGrowCenter $grow="1">
-        <SignFlex>
-          <LoginBox />
-        </SignFlex>
-      </FlexGrowCenter>
-      <FlexGrowCenter $grow="1">
-        <SignFlex>
-          <SignUpBox />
-        </SignFlex>
-      </FlexGrowCenter>
-    </MainFlex>
+    </div>
   );
 };
 
