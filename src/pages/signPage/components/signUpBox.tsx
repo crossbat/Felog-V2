@@ -1,23 +1,25 @@
-import { useNavigate } from "react-router";
-import { SmallFont } from "../../../styles/commomTextStyles";
-import { SignInputSize } from "../../../styles/commonInputStyles";
-import { SignButton } from "../signPageStyles";
+import { ExtraSmallFont, SmallFont } from "../../../styles/commomTextStyles";
+import type { TSignPageToggle } from "../../../types/signPageTypes";
+import { CommonInput, InputContainer, SubmitButton } from "../signPageStyles";
 
-const SignUpBox = () => {
-  const nav = useNavigate();
+const SignUpBox = ({
+  setStatusChange,
+  setPageStatusChange,
+}: TSignPageToggle) => {
   return (
     <>
-      <img
-        src="../../../assets/logo.png"
-        className="h-[100px] object-contain"
-        onClick={() => nav("/")}
-      />
-      <SignInputSize placeholder="아이디" />
-      <SignInputSize placeholder="이메일" />
-      <SignInputSize placeholder="비밀번호" type="password" />
-      <SignInputSize placeholder="비밀번호 확인" type="password" />
-      <SignButton>이메일 인증 요청</SignButton>
-      <SmallFont>계정이 이미 있나요?</SmallFont>
+      <InputContainer>
+        <CommonInput placeholder="이메일" />
+        <CommonInput placeholder="아이디" />
+        <CommonInput type="password" placeholder="비밀번호" />
+        <CommonInput type="password" placeholder="비밀번호 확인" />
+        <SubmitButton onClick={() => setStatusChange?.()}>
+          <SmallFont>이메일 인증요청하기</SmallFont>
+        </SubmitButton>
+      </InputContainer>
+      <ExtraSmallFont onClick={() => setPageStatusChange()}>
+        이미 가입하셨나요?
+      </ExtraSmallFont>
     </>
   );
 };

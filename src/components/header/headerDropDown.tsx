@@ -11,18 +11,25 @@ import {
 } from "./headerStyles";
 import { useNavigate } from "react-router";
 import { useHeaderDropdownStatusStore } from "../../stores/headerStores";
+import { useSignPageToggleStore } from "../../stores/SignStores";
 
 type TDropdownStatus = {
   isOpened: boolean;
 };
 
 const HeaderDropDown = ({ isOpened }: TDropdownStatus) => {
+  const { setPageLogin, setPageSignUp } = useSignPageToggleStore();
   const nav = useNavigate();
 
   const { reset } = useHeaderDropdownStatusStore();
 
-  const goTo = (where: "sign" | "board") => {
-    nav(`/${where == "sign" ? where : `user/${where}`}`);
+  const goTo = (where: "sign" | "login" | "board") => {
+    if (where == "sign" || where == "login") {
+      where == "sign" ? setPageSignUp() : setPageLogin();
+      nav("/sign");
+    } else {
+      nav("/user/board");
+    }
     reset();
   };
 
@@ -44,7 +51,7 @@ const HeaderDropDown = ({ isOpened }: TDropdownStatus) => {
           </HeaderButton>
           <HeaderButton
             type="button"
-            onClick={() => goTo("sign")}
+            onClick={() => goTo("login")}
             className="text-white"
           >
             <SmallFont>Sign up</SmallFont>
