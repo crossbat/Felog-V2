@@ -35,7 +35,7 @@ export const SignPageLogoImg = tw.img`
   invert
 `;
 
-const SignContainer = tw(FlexCol)`
+const SignContainer = tw(FlexCol)<IPageStatus>`
   justify-center
   items-center
   gap-8
@@ -47,7 +47,8 @@ const SignContainer = tw(FlexCol)`
   overflow-hidden
   whitespace-nowrap
   ease-in-out
-  duration-700
+  duration-600
+  transition-[width,height,padding,opacity]
 `;
 
 interface IPageStatus {
@@ -55,19 +56,11 @@ interface IPageStatus {
 }
 
 export const LoginContainer = tw(SignContainer)<IPageStatus>`
-  ${(p) => (p.$status ? "h-0 w-1/3 p-0" : "w-full h-full")}
+  ${(p) => (p.$status ? "h-0 w-1/3 p-0 opacity-0 delay-[200ms,200ms,200ms,0s]" : "w-full h-full opacity-100 delay-[200ms,200ms,200ms,400ms]")}
 `;
 
 export const SignUpContainer = tw(SignContainer)<IPageStatus>`
-  ${(p) => (p.$status ? "w-full h-full" : "w-1/3 h-0 p-0")}
-`;
-
-export const ForLoginOpacity = tw(FullSizeDiv)<IPageStatus>`
-
-`;
-
-export const ForSignUpOpacity = tw(FullSizeDiv)<IPageStatus>`
-
+  ${(p) => (p.$status ? "w-full h-full opacity-100 delay-[200ms,200ms,200ms,400ms]" : "w-1/3 h-0 p-0 opacity-0 delay-[200ms,200ms,200ms,0s]")}
 `;
 
 export const InputContainer = tw(FlexCol)`

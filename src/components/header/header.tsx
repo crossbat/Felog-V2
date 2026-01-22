@@ -1,5 +1,3 @@
-import { useState } from "react";
-import UserNav from "./userNavi";
 import {
   HeaderInnerDiv,
   HeaderMain,
@@ -7,29 +5,28 @@ import {
   MenuImage,
 } from "./headerStyles";
 import { useHeaderDropdownStatusStore } from "../../stores/headerStores";
+import { locationCheck } from "../../utils/locationCheck";
+import { useNavigate } from "react-router";
 
 const Header = () => {
+  const signPageDetection = locationCheck("sign");
+  const nav = useNavigate();
+
   const { isOpened, setStatusChange } = useHeaderDropdownStatusStore();
-  const [userSwitch, setUserSwitch] = useState(false);
   const logoSrc = "../../../assets/logo.png";
   return (
-    <HeaderMain>
+    <HeaderMain $signPageDetected={signPageDetection}>
       <HeaderInnerDiv>
-        <a href="#" onClick={() => setUserSwitch(!userSwitch)}>
+        <a href="#" onClick={() => nav("/")}>
           <LogoImage src={logoSrc} alt="logo" $opened={isOpened} />
         </a>
-        {userSwitch ? <UserNav /> : <></>}
-        {userSwitch ? (
-          <div className="rounded-full h-[50px] w-[50px] bg-amber-100" />
-        ) : (
-          <div className="flex items-center">
-            <MenuImage
-              src="../../../assets/menu.png"
-              $opened={isOpened}
-              onClick={() => setStatusChange()}
-            />
-          </div>
-        )}
+        <div className="flex items-center">
+          <MenuImage
+            src="../../../assets/menu.png"
+            $opened={isOpened}
+            onClick={() => setStatusChange()}
+          />
+        </div>
       </HeaderInnerDiv>
     </HeaderMain>
   );

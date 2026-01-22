@@ -1,12 +1,18 @@
 import tw from "tailwind-styled-components";
-import { FlexCol, FlexRow } from "../../styles/commonDivStyles";
+import { FlexCol, FlexColFullDiv, FlexRow } from "../../styles/commonDivStyles";
 
 interface IDropDownStatus {
   $opened: boolean;
 }
 
-export const HeaderMain = tw(FlexCol)`
+interface ISignPageDetection {
+  $signPageDetected: boolean;
+}
+
+export const HeaderMain = tw(FlexCol)<ISignPageDetection>`
   w-full
+  max-h-fit
+  overflow-hidden
   items-center
   fixed
   top-0
@@ -15,6 +21,9 @@ export const HeaderMain = tw(FlexCol)`
   duration-1000
   sm:px-5
   xl:px-0
+  ${(p) => (p.$signPageDetected ? "opacity-0 h-0" : "opacity-100 h-full")}
+  ease-in-out
+  duration-500
 `;
 
 export const LogoImage = tw.img<IDropDownStatus>`
@@ -54,9 +63,10 @@ export const HeaderDropDownMain = tw(FlexRow)<IDropDownStatus>`
 `;
 
 //header-Left
-export const HeaderDropDownLeft = tw(FlexCol)`
+export const HeaderDropDownLeft = tw(FlexColFullDiv)`
   gap-10
-  w-fit
+  max-w-fit
+  max-h-fit
 `;
 
 export const HeaderDropDownHero = tw(FlexCol)`
