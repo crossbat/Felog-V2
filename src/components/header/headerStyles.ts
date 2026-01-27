@@ -115,3 +115,32 @@ export const MoveToDiaryImage = tw.img`
   duration-500
   cursor-pointer
 `;
+
+export const ContentFlexBox = tw(FlexCol)`
+  items-end
+  h-full
+  gap-2
+`;
+
+export const EachContentFlexBox = tw(FlexRow)`
+  justify-end
+  items-center
+  h-full
+  w-fit
+  gap-5
+  p-2
+  rounded-2xl
+  hover:bg-gray-600
+`;
+
+export const TempMenuImageBox = tw.div`
+  aspect-square
+  h-full
+  rounded-2xl
+  bg-gray-300
+`;
+
+export const ContentTextBox = tw(FlexCol)`
+  w-fit
+  gap-1
+`;

@@ -1,6 +1,11 @@
 import moment from "moment";
 import Calendar from "react-calendar";
+// import "../../../../../node_modules/react-calendar/dist/Calendar.css";
 import "../../../../styles/CalendarStyles.css";
+import {
+  MdOutlineArrowBackIos,
+  MdOutlineArrowForwardIos,
+} from "react-icons/md";
 
 const UserDropdownLeft = () => {
   return (
@@ -11,6 +16,8 @@ const UserDropdownLeft = () => {
         minDetail="year"
         defaultView="month"
         formatDay={(locale, date) => moment(date).format("DD")}
+        nextLabel={<MdOutlineArrowForwardIos />}
+        prevLabel={<MdOutlineArrowBackIos />}
       />
     </>
   );

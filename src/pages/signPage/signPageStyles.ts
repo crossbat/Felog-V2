@@ -1,10 +1,5 @@
 import tw from "tailwind-styled-components";
-import {
-  FlexCol,
-  FlexColScnDiv,
-  FlexRow,
-  FullSizeDiv,
-} from "../../styles/commonDivStyles";
+import { FlexCol, FlexColScnDiv, FlexRow } from "../../styles/commonDivStyles";
 
 interface ITempEmailToggle {
   $status: boolean;
