@@ -10,8 +10,10 @@ const MainLayout = () => {
   return (
     <>
       <HeaderMenuDiv $opened={isOpened}>
-        <EmptySpace />
-        <HeaderDropDown isOpened={isOpened} />
+        <div className="overflow-hidden">
+          <EmptySpace />
+          <HeaderDropDown isOpened={isOpened} />
+        </div>
       </HeaderMenuDiv>
       <div className="w-screen h-screen flex flex-col content-stretch">
         <Header />

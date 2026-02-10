@@ -5,8 +5,9 @@ interface IHeaderMenuStatus {
   $opened: boolean;
 }
 
-export const HeaderMenuDiv = tw(FlexCol)<IHeaderMenuStatus>`
-  ${(p) => (p.$opened ? "w-[var(--sidebar-open-width)] h-2/3" : "w-[var(--sidebar-close-width)] h-0")}
+export const HeaderMenuDiv = tw(FlexCol) <IHeaderMenuStatus>`
+  grid
+  ${(p) => (p.$opened ? "w-[var(--sidebar-open-width)] grid-rows-[1fr]" : "w-[var(--sidebar-close-width)] grid-rows-[0fr]")}
   bg-[#0F0E0E]
   absolute
   z-999
@@ -16,9 +17,8 @@ export const HeaderMenuDiv = tw(FlexCol)<IHeaderMenuStatus>`
   rounded-b-3xl
   ease-in-out
   duration-500
-  overflow-hidden
 `;
 
 export const EmptySpace = tw.div`
-  h-[120px]
+  min-h-[120px]
 `;

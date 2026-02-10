@@ -9,7 +9,7 @@ interface ISignPageDetection {
   $signPageDetected: boolean;
 }
 
-export const HeaderMain = tw(FlexCol)<ISignPageDetection>`
+export const HeaderMain = tw(FlexCol) <ISignPageDetection>`
   w-full
   max-h-fit
   overflow-hidden
@@ -51,11 +51,12 @@ export const HeaderInnerDiv = tw(FlexRow)`
 
 //HeaderDropDown
 
-export const HeaderDropDownMain = tw(FlexRow)<IDropDownStatus>`
+export const HeaderDropDownMain = tw(FlexRow) <IDropDownStatus>`
   flex-1
   justify-between
   whitespace-nowrap
-  py-5
+  pt-5
+  pb-16
   px-[var(--sidebar-padding)]
   w-full
   ${(p) => (p.$opened ? "opacity-100 duration-1200" : "opacity-0 duration-300")}
