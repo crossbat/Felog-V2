@@ -1,16 +1,11 @@
 import { MediumFont, SmallFont } from "../../styles/commomTextStyles";
-import {
-  FlexCol,
-  FlexRow,
-  FlexRowFullDiv,
-  GridFullTemplate,
-} from "../../styles/commonDivStyles";
+import { FlexCol, FlexRow, FlexRowFullDiv } from "../../styles/commonDivStyles";
 
 const MyNotes = () => {
   return (
     <FlexCol $gap={5}>
       <MediumFont $bold={true}>내 노트</MediumFont>
-      <GridFullTemplate $width="4" $height="2" $gap={10} className="p-3">
+      <div className="grid grid-rows-2 grid-cols-4 gap-10 p-3">
         <FlexRow className="justify-center items-center h-90">
           <FlexRowFullDiv className="justify-center items-center bg-gray-200 rounded-2xl shadow-lg">
             <div className="opacity-50">
@@ -26,7 +21,7 @@ const MyNotes = () => {
             </div>
           </FlexRowFullDiv>
         </FlexRow>
-      </GridFullTemplate>
+      </div>
     </FlexCol>
   );
 };

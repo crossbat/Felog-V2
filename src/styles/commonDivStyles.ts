@@ -11,6 +11,22 @@ export const FullSizeDiv = tw.div`
   h-full
 `;
 
+interface filter {
+  $blur: boolean;
+}
+
+export const PageBlurFilter = tw(FullScreenDiv)<filter>`
+  backdrop-blur-sm absolute z-1000
+  ease-in-out
+  duration-300
+  ${(p) => (p.$blur ? "visible" : "hidden")}
+`;
+
+export const BasicNoteCover = tw.div`
+  h-full
+  aspect-2/3
+`;
+
 //flex
 interface IDivOpts {
   $gap?: number;
@@ -70,13 +86,14 @@ export const FlexGrowColDiv = tw(FullSizeDiv)<IDivOpts>`
 //grid
 
 interface gridTemplateProps {
-  $width: string;
-  $height: string;
+  $width: number;
+  $height: number;
   $gap: number;
 }
 
 export const GridFullTemplate = tw(FullSizeDiv)<gridTemplateProps>`
-  ${(p) => `grid-cols-${p.$width} grid-rows-${p.$height}`}
   grid
+  ${(p) => `grid-rows-${p.width}`}
+  ${(p) => `grid-cols-${p.height}`}
   ${(p) => `gap-${p.$gap}`}
 `;

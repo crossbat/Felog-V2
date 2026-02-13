@@ -7,10 +7,11 @@
   --sidebar-close-width: min(100vw, 1152px);
   --signpage-padding: max(1rem, calc((100vw - 500px) / 2));
   --signpage-alert-open-width: min(100vw, 400px);
+  --notePopup-width: max(1rem, 900px);
 }
-body{
- -ms-overflow-style: none;
- }
+body {
+  -ms-overflow-style: none;
+}
 ::-webkit-scrollbar {
   display: none;
 }
