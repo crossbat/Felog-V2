@@ -15,11 +15,14 @@ interface filter {
   $blur: boolean;
 }
 
-export const PageBlurFilter = tw(FullScreenDiv)<filter>`
-  backdrop-blur-sm absolute z-1000
+export const PageBlurFilter = tw(FullScreenDiv) <filter>`
+  backdrop-blur-sm
+  absolute
+  z-1000
+  transition-all
   ease-in-out
-  duration-300
-  ${(p) => (p.$blur ? "visible" : "hidden")}
+  duration-1000
+  ${(p) => (p.$blur ? "opacity-100" : "hidden opacity-0")}
 `;
 
 export const BasicNoteCover = tw.div`
@@ -44,31 +47,31 @@ export const FlexCol = tw.div<IDivOpts>`
   ${(p) => `gap-${p.$gap}`}
 `;
 
-export const FlexRowFullDiv = tw(FullSizeDiv)<IDivOpts>`
+export const FlexRowFullDiv = tw(FullSizeDiv) <IDivOpts>`
   flex
   flex-row
   ${(p) => `gap-${p.$gap}`}
 `;
 
-export const FlexColFullDiv = tw(FullSizeDiv)<IDivOpts>`
+export const FlexColFullDiv = tw(FullSizeDiv) <IDivOpts>`
   flex
   flex-col
   ${(p) => `gap-${p.$gap}`}
 `;
 
-export const FlexRowScnDiv = tw(FullScreenDiv)<IDivOpts>`
+export const FlexRowScnDiv = tw(FullScreenDiv) <IDivOpts>`
   flex
   flex-row
   ${(p) => `gap-${p.$gap}`}
 `;
 
-export const FlexColScnDiv = tw(FullScreenDiv)<IDivOpts>`
+export const FlexColScnDiv = tw(FullScreenDiv) <IDivOpts>`
   flex
   flex-col
   ${(p) => `gap-${p.$gap}`}
 `;
 
-export const FlexGrowRowDiv = tw(FullSizeDiv)<IDivOpts>`
+export const FlexGrowRowDiv = tw(FullSizeDiv) <IDivOpts>`
   flex
   flex-row
   ${(p) => `grow-${p.$grow}`}
@@ -76,7 +79,7 @@ export const FlexGrowRowDiv = tw(FullSizeDiv)<IDivOpts>`
   
 `;
 
-export const FlexGrowColDiv = tw(FullSizeDiv)<IDivOpts>`
+export const FlexGrowColDiv = tw(FullSizeDiv) <IDivOpts>`
   flex
   flex-col
   ${(p) => `grow-${p.$grow}`}
@@ -91,7 +94,7 @@ interface gridTemplateProps {
   $gap: number;
 }
 
-export const GridFullTemplate = tw(FullSizeDiv)<gridTemplateProps>`
+export const GridFullTemplate = tw(FullSizeDiv) <gridTemplateProps>`
   grid
   ${(p) => `grid-rows-${p.width}`}
   ${(p) => `grid-cols-${p.height}`}

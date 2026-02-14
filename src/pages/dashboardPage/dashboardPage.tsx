@@ -1,22 +1,25 @@
 import { RiCloseFill } from "react-icons/ri";
 import { FlexRow } from "../../styles/commonDivStyles";
-import { NotePopup } from "./dashboardStyles";
+import { NotePopup, PopupButtonDiv } from "./dashboardStyles";
 import LatestDocs from "./latestDocs";
 import MyNotes from "./myNotes";
 import NoteSetting from "./noteSetting";
 import { IoCheckmark } from "react-icons/io5";
+import { useNotePopupToggleStore } from "../../stores/dashboardStores";
 
 const DashboardPage = () => {
+  const { isOpen, reset } = useNotePopupToggleStore()
+  console.log(isOpen)
   return (
     <>
-      <NotePopup>
+      <NotePopup $isOpen={isOpen}>
         <FlexRow $gap={10}>
-          <div className="w-15 h-auto aspect-square rounded-full bg-black flex justify-center items-center ">
+          <PopupButtonDiv onClick={() => reset()}>
             <RiCloseFill className="text-white w-5 h-5" />
-          </div>
-          <div className="w-15 h-auto aspect-square rounded-full bg-black flex justify-center items-center ">
+          </PopupButtonDiv>
+          <PopupButtonDiv onClick={() => reset()}>
             <IoCheckmark className="text-white w-5 h-5" />
-          </div>
+          </PopupButtonDiv>
         </FlexRow>
         <NoteSetting />
       </NotePopup>

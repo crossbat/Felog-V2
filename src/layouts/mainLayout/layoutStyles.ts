@@ -7,7 +7,10 @@ interface IHeaderMenuStatus {
 
 export const HeaderMenuDiv = tw(FlexCol) <IHeaderMenuStatus>`
   grid
-  ${(p) => (p.$opened ? "w-[var(--sidebar-open-width)] grid-rows-[1fr]" : "w-[var(--sidebar-close-width)] grid-rows-[0fr]")}
+  ${(p) => (p.$opened
+    ? "w-[var(--sidebar-open-width)] grid-rows-[1fr]"
+    : "w-[var(--sidebar-close-width)] grid-rows-[0fr]"
+  )}
   bg-[#0F0E0E]
   absolute
   z-999

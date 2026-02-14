@@ -5,14 +5,14 @@ import { EmptySpace, HeaderMenuDiv } from "./layoutStyles";
 import HeaderDropDown from "../../components/header/Dropdown/headerDropDown";
 import { locationCheck } from "../../utils/locationCheck";
 import { PageBlurFilter } from "../../styles/commonDivStyles";
-import { useBlurFilterStatusStore } from "../../stores/filterStores";
+import { useNotePopupToggleStore } from "../../stores/dashboardStores";
 const MainLayout = () => {
   const { isOpened } = useHeaderDropdownStatusStore();
-  const { blur } = useBlurFilterStatusStore();
+  const { isOpen } = useNotePopupToggleStore();
   const SignPageCheck = locationCheck("/sign");
   return (
     <>
-      <PageBlurFilter $blur={!blur} />
+      <PageBlurFilter $blur={isOpen} />
       <HeaderMenuDiv $opened={isOpened}>
         <div className="overflow-hidden">
           <EmptySpace />
