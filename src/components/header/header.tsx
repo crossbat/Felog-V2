@@ -30,6 +30,6 @@ const Header = () => {
       </HeaderInnerDiv>
     </HeaderMain>
   );
-};
+}
 
 export default Header;
